@@ -1,0 +1,82 @@
+<project name="Kapture Test" default="dist">
+  <property name="main.class" value="ApplicationLauncher" />
+  <property name="jar.name" value="application.jar" />
+  <property name="source" location="source" />
+  <property name="source.java" location="${source}/java" />
+  <property name="dist" location="dist" />
+  <property name="build" location="build" />
+  <property name="build.classes" location="${build}/classes" />
+  <property name="third-party.dir" location="third-party" />
+  <property name="filter-runner.dir" location="${third-party.dir}/filter-runner" />
+  <property name="filter-runner.jar" location="${filter-runner.dir}/filter-runner.jar" />
+ <property name="sqlite.dir" location="${third-party.dir}/sqlite" />
+  <property name="sqlite.jar" location="/opt/managed/devel/SQLite/sqlite-jdbc-3.39.4.0/sqlite-jdbc-3.39.4.0.jar" />
+  <path id="app.source.path.id">
+    <pathelement path="${source.java}" />
+  </path>
+
+  <target name="clean">
+    <delete dir="${dist}" />
+    <delete dir="${build}" />
+  </target>
+
+  <target name="compile">
+    <mkdir dir="${build.classes}" />
+    <javac destdir="${build.classes}" debug="true" includeantruntime="false">
+      <src>
+        <path refid="app.source.path.id" />
+      </src>
+    </javac>
+    <copy toDir="${build.classes}">
+      <fileset dir="source/java" includes="**/*.css" />
+    </copy>
+    <mkdir dir="${build.classes}/fonts" />
+    <copy todir="${build.classes}/fonts">
+      <fileset dir="third-party/fonts/525icons-5_4/fonts" includes="*.ttf" />
+      <fileset dir="third-party/fonts/liberation-fonts-ttf-2.00.1" includes="*.ttf" />
+    </copy>
+  </target>
+
+  <target name="copy-fxml">
+    <!-- copy-fxml macro requires system specific file path separators -->
+    <copy-fxml relSrcDir="source/java" targetDir="build/classes" />
+  </target>
+
+  <macrodef name="copy-fxml">
+    <attribute name="relSrcDir" />
+    <attribute name="targetDir" />
+    <sequential>
+      <!-- mapper task requires system specific file path separators -->
+      <mapper id="fxml-files-mapper-@{relSrcDir}" type="glob" from="@{relSrcDir}${file.separator}*.fxml" to="@{targetDir}${file.separator}*.fxml" />
+
+      <apply executable="java" dest="@{targetDir}" failonerror="true" verbose="true" relative="true">
+        <arg value="-jar" />
+        <arg value="${filter-runner.jar}" />
+        <arg value="-log:INFO" />
+        <srcfile />
+        <targetfile />
+        <arg value="fxml-namespace-fixer" />
+        <arg value="fxml-controller-add" />
+        <fileset dir="${basedir}" includes="@{relSrcDir}/**/*.fxml" />
+        <mapper refid="fxml-files-mapper-@{relSrcDir}" />
+      </apply>
+    </sequential>
+  </macrodef>
+
+  <target name="dist" depends="compile, copy-fxml">
+    <mkdir dir="${dist}" />
+    <jar jarfile="${dist}/${jar.name}">
+      <fileset dir="${build.classes}" />
+      <manifest>
+        <attribute name="Main-Class" value="${main.class}" />
+        <attribute name="Class-Path" value="${jar.name}" />
+	<attribute name="Class-Path" value="lib/sqlite.jar" />
+
+      </manifest>
+    </jar>
+    <copy tofile="dist/lib/sqlite.jar" file="${sqlite.jar}" />
+    <copy todir="dist/db">
+      <fileset dir="source/db" includes="*.sqlite" />
+    </copy>
+  </target>
+</project>

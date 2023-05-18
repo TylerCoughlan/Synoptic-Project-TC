@@ -1,0 +1,96 @@
+The 525 Icons font is found at
+  http://525icons.com/index.html
+
+According to the bottom of the page, it's released under the OFL 1.1 licence.
+,----
+| The 525icons font is licensed under SIL OFL 1.1
+`----
+This links to http://scripts.sil.org/OFL
+
+That page (which redirects to a more complex URL) links to the 1.1 licence at
+http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+
+
+According to PERMISSIONS & CONDITIONS in that licence, "Permission is
+hereby granted, free of charge, to any person obtaining a copy of the
+Font Software, to [...] embed [...] modified and unmodified copies of
+the Font Software, subject to the following conditions:"
+
+The conditions don't affect our intended use, namely inclusion of the
+font file inside the ModelWorks jar for use in our GUI, and any
+screenshots that this might result in:
+
+ 1. We are not any font-related content by itself.
+
+ 2. We are "embedding", and hence not "bundling" (e.g. producing a
+    collection of fonts for people to use).  For example of why we
+    think "bundling" == "making a collection available for users to
+    use directly", see the last sentence of FAQ entry at
+    http://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web#fa29573b
+
+,----
+| Question: 1.21 What about including OFL fonts by default in my
+| firmware or dedicated operating system?
+| 
+| Answer: [...] Alternatively if you directly add a font under the OFL
+| to the font folder of your firmware without modifying or optimizing it
+| you are simply bundling the font like with any other software
+| collection, and do not need to make any further changes.
+`----
+
+    We think we *are* embedding (and hence not bundling) because of
+    FAQ 1.11, at
+    http://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web#e6faa5ad
+,----
+| Question: 1.11 What do you mean by 'embedding'? How does that differ
+| from other means of distribution?
+| 
+| Answer: By 'embedding' we mean inclusion of the font in a document or
+| file in a way that makes extraction (and redistribution) difficult or
+| clearly discouraged. [...]
+`----
+    which clearly seems to fit with our "that font is buried inside
+    the ModelWorks jar file" intention.  (If we had this in a separate
+    directory that users could easily view, we'd be bundling, and
+    would need to include a licence file alongside per 2.)
+
+ 3. We have no intention of modifying the font, or presenting any kind
+    of font name to users.
+
+ 4. We have no intention of using the font designer's names to promote
+    ModelWorks.
+
+ 5. We are not "distributing" the font, only embedding it.  See the
+    FAQ 1.11 above for a start, plus also
+    http://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web#3ce192cf
+,----
+| Question: 1.3 I want to distribute the fonts with my program. Does
+| this mean my program also has to be Free/Libre and Open Source
+| Software?
+| 
+| Answer: No. Only the portions based on the Font Software are required
+| to be released under the OFL. The intent of the license is to allow
+| aggregation or bundling with software under restricted licensing as
+| well.
+`----
+
+
+Given the above, plus the observation that the SIL fonts have been
+distributed under the Apache licence (which is also
+ModelWorks-friendly), I am happy that this font can be used with
+ModelWorks.
+    -- Paul Whittaker, 7 July 2016
+
+Reference for Apache licence comment above:
+  https://bitbucket.org/Jerady/fontawesomefx/overview
+says
+,----
+| Currently supported (and build-in):
+|     [...]
+|     525Icons 2.0
+| 
+| [...]
+| License
+| 
+| FontAwesomeFX is licensed under the Apache 2.0 license.
+`----
