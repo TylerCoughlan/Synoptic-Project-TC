@@ -28,7 +28,7 @@
       </src>
     </javac>
     <copy toDir="${build.classes}">
-      <fileset dir="source/java" includes="**/*.css" />
+      <fileset dir="source/java" includes="**/*.css, **/*.png" />
     </copy>
     <mkdir dir="${build.classes}/fonts" />
     <copy todir="${build.classes}/fonts">

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox fx:id="_rootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drisq.minimalGraphicsProject.fx.PrimaryWindowController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox fx:id="_resultsLogoHbox" alignment="CENTER" prefHeight="88.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@../../../../../../logos/WeDevelopNow_logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox fx:id="_resultsTableVbox" alignment="CENTER" layoutY="88.0" prefHeight="236.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="_retailResultsTable" prefHeight="200.0">
+                    <columns>
+                      <TableColumn fx:id="_productDescCol" prefWidth="171.0" text="Product Description" />
+                      <TableColumn fx:id="_quantityCol" minWidth="6.0" prefWidth="86.0" text="Quantity" />
+                        <TableColumn fx:id="_availableCol" prefWidth="154.0" text="Available in Store" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" layoutY="327.0" prefHeight="73.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <Button fx:id="_backBtnResults" mnemonicParsing="false" text="Back" />
+                  <Button fx:id="_homeBtnResults" mnemonicParsing="false" text="Home" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
