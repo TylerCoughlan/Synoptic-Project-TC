@@ -14,9 +14,9 @@
          <children>
             <HBox fx:id="_retailMainLogoHbox" alignment="CENTER" prefHeight="81.0" prefWidth="600.0">
                <children>
-                  <ImageView fx:id="_retailMainLogo" fitHeight="30.0" fitWidth="200.0">
+                  <ImageView fx:id="_retailMainLogo" fitHeight="82.0" fitWidth="127.0">
                      <image>
-                        <Image url="@../../../../../../logos/WeDevelopNow_logo.png" />
+                        <Image url="@StylishYou_Logo_Main.png" />
                      </image>
                   </ImageView>
                </children>

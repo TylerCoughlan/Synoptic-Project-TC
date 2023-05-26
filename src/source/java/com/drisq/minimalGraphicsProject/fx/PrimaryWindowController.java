@@ -2,6 +2,8 @@ package com.drisq.minimalGraphicsProject.fx;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -148,6 +150,22 @@ public class PrimaryWindowController {
 		});
 	}
 
+	public static ResultSet createTable() {
+
+		String tableQuery = "SELECT ProductDesc, Brand, Qauntity  FROM OurProducts";
+		return null;
+
+//		try {
+//			Statement tableQueryPS = () getConnection()).createStatement();
+//			ResultSet tableNames = tableQueryPS.executeQuery(tableQuery);
+//			System.out.println("Table query successful.");
+//			return tableNames;
+//
+//		} catch (Exception e) {
+
+	
+	}
+
 	// This Method sets the scene of the GUI to show the inventory of the store once
 	// filters have been selected and the search button pressed
 	public void searchToResults(Stage stage) throws Exception {
@@ -186,6 +204,28 @@ public class PrimaryWindowController {
 					Parent root = FXMLLoader.load(getClass().getResource("rsc/RetailMainMenu.fxml"));
 					Scene scene = new Scene(root);
 					stage.setTitle("Retail Main Menu");
+					stage.setScene(scene);
+					stage.show();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public void backButton(Stage stage) throws Exception {
+
+		Button backButton = _backBtnResults;
+		backButton.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				try {
+					Parent root = FXMLLoader.load(getClass().getResource("rsc/RetailSearchMenu.fxml"));
+					Scene scene = new Scene(root);
+					stage.setTitle("Retail Search Menu");
 					stage.setScene(scene);
 					stage.show();
 				} catch (IOException e) {

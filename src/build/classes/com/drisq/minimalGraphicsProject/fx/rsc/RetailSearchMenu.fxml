@@ -37,9 +37,9 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
                </padding>
                <children>
-                  <ImageView fx:id="_searchMainLogo" fitHeight="30.0" fitWidth="200.0">
+                  <ImageView fx:id="_searchMainLogo" fitHeight="76.0" fitWidth="107.0">
                      <image>
-                        <Image url="@../../../../../../logos/WeDevelopNow_logo.png"/>
+                        <Image url="@StylishYou_Logo_Main.png"/>
                      </image>
                   </ImageView>
                   <Label fx:id="_brandProductLabel"/>

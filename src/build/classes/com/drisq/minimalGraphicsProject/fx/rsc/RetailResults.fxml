@@ -33,9 +33,9 @@
                   prefHeight="88.0"
                   prefWidth="600.0">
                <children>
-                  <ImageView fitHeight="30.0" fitWidth="200.0">
+                  <ImageView fitHeight="89.0" fitWidth="126.0">
                      <image>
-                        <Image url="@../../../../../../logos/WeDevelopNow_logo.png"/>
+                        <Image url="@StylishYou_Logo_Main.png"/>
                      </image>
                   </ImageView>
                </children>
