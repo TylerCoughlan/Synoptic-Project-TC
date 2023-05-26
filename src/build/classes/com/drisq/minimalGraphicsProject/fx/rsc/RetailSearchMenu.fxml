@@ -56,12 +56,15 @@
                             prefHeight="35.0"
                             prefWidth="200.0"
                             promptText="Gender"/>
-                  <ComboBox fx:id="_brandProductCombo" prefHeight="35.0" prefWidth="200.0"/>
+                  <ComboBox fx:id="_brandProductCombo"
+                            prefHeight="35.0"
+                            prefWidth="200.0"
+                            promptText="Product Type"/>
                   <ComboBox fx:id="_sizeCombo"
                             prefHeight="35.0"
                             prefWidth="200.0"
                             promptText="Size"/>
-                  <ComboBox fx:id="_colourCOmbo"
+                  <ComboBox fx:id="_colourCombo"
                             prefHeight="35.0"
                             prefWidth="200.0"
                             promptText="Colour"/>
